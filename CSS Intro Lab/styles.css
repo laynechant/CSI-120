@@ -1,0 +1,13 @@
+#page-title{
+    font-size: 32px;
+    color: darkblue;
+    background-color: white;
+}
+
+.animal {color: black; font-size: italic;}
+
+img {width: 200px; height: auto;}
+
+p {border: 1px solid black;}
+
+body { font-family: Arial, sans-serif;}
