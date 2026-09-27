@@ -1,0 +1,29 @@
+
+.flex-container {
+    border: 2px solid red;
+
+    padding: 15px;
+    width: 200px;
+
+    margin: 5px;
+
+    flex: 1;
+}
+
+
+.block-vs-inline
+{
+    width: 300px;
+}
+
+.stacked-boxes{
+    margin: 40px;
+}
+
+.row {
+    display: flex;
+    gap: 1rem;
+    /* using space between ended up making all three divs equally spaced from the left to right side of the page where center just moved all three rows to the center of the page  */
+    justify-content: space-between;
+
+}
