@@ -1,0 +1,18 @@
+.outerRow
+{
+    display: flex;
+    
+    gap: 8px;
+}
+
+.middleRow
+{
+    display: flex;
+    gap: 31px;
+}
+
+.lastRow
+{
+    display: flex;
+    padding-left: 23px;
+}
