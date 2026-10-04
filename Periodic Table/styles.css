@@ -1,0 +1,24 @@
+.periodic-element {
+  
+    margin: 20px;
+    border-style: groove;
+    border-color: black;
+    border-width: 5px;
+    width: max-content;
+
+    font-size: medium ;
+    font-family: 'Courier New', Courier, monospace;
+
+    color: purple;
+    background-color: antiquewhite;
+}
+
+img { width: 80%}
+
+.atomic-info
+{
+    display: flex;
+    padding: 8px;
+    margin: 5px;
+    text-align: left;
+}
