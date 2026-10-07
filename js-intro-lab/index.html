@@ -1,0 +1,71 @@
+<!--
+CSI-120 — JavaScript Intro Lab
+
+Fill in the missing code in script.js. Each function has a comment telling you
+what it should do. The HTML below is finished — you should not need to change it.
+
+Two things you will use over and over:
+
+    // read what someone typed into an input
+    const value = document.getElementById("someInput").value;
+
+    // put a result on the page
+    document.getElementById("someOutput").textContent = "the answer";
+
+Note that .value always gives you a STRING, even from a number input.
+Number("42") turns "42" into 42. That trips up exercise 5 in particular.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSI 120 — JavaScript Intro Lab</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <h1>JavaScript Intro Lab</h1>
+
+  <section>
+    <h3>1. Temperature Converter</h3>
+    <input type="number" id="fahrenheit" placeholder="degrees F">
+    <button id="convertButton">Convert</button>
+    <p>Result: <span id="celsiusOutput"></span></p>
+  </section>
+
+  <section>
+    <h3>2. Number Guessing Game</h3>
+    <p>I am thinking of a number between 0 and 99.</p>
+    <input type="number" id="guess" placeholder="your guess">
+    <button id="guessButton">Guess</button>
+    <button id="newGameButton">New Game</button>
+    <p>Result: <span id="guessOutput"></span></p>
+  </section>
+
+  <section>
+    <h3>3. Even or Odd</h3>
+    <input type="number" id="evenOddInput" placeholder="a number">
+    <button id="evenOddButton">Check</button>
+    <p>Result: <span id="evenOddOutput"></span></p>
+  </section>
+
+  <section>
+    <h3>4. Word Reverser</h3>
+    <input type="text" id="wordInput" placeholder="a word or phrase">
+    <button id="reverseButton">Reverse</button>
+    <p>Result: <span id="reverseOutput"></span></p>
+  </section>
+
+  <section>
+    <h3>5. Simple Adder</h3>
+    <input type="number" id="addend1" placeholder="first number">
+    <input type="number" id="addend2" placeholder="second number">
+    <button id="addButton">Add</button>
+    <p>Result: <span id="addOutput"></span></p>
+  </section>
+</body>
+
+</html>
