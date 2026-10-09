@@ -8,6 +8,8 @@ function convertTemperature() {
   // YOU FILL IN HERE
   // Convert fahrenheit to celsius:  (F - 32) * 5/9
   // Put the answer into output.textContent
+ 
+  output.textContent = ((fahrenheit - 32) * 5/9);
 }
 
 // ---------------------------------------------------------------------------
@@ -22,7 +24,20 @@ function checkGuess() {
 
   // YOU FILL IN HERE
   // Compare guess to secretNumber and say "Too high", "Too low", or "Correct!"
-  // You will need an if / else if / else.
+  // You will need an if / else if / else.101
+  
+  if(guess > secretNumber)
+  {
+    output.textContent = "Too High";
+  }
+  else if (guess < secretNumber)
+  {
+    output.textContent = " Too Low";
+  }
+  else if (guess == secretNumber)
+  {
+    output.textContent = "Correct";
+  }
 }
 
 function newGame() {
@@ -40,6 +55,14 @@ function checkEvenOdd() {
   // YOU FILL IN HERE
   // A number is even when dividing it by 2 leaves no remainder.
   // The remainder operator is %   ->   10 % 2 is 0, and 7 % 2 is 1.
+  if(number % 2 == 0)
+  {
+    output.textContent = " This number is even!!"
+  }
+  else
+  {
+    output.textContent = "This number is odd"
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -53,6 +76,8 @@ function reverseWord() {
   // Reverse the characters in text.
   // Hint: a string can become an array with .split(""), arrays have .reverse(),
   // and an array can become a string again with .join("").
+
+  output.textContent = text.split("").reverse().join("");
 }
 
 // ---------------------------------------------------------------------------
@@ -66,6 +91,12 @@ function addNumbers() {
   // YOU FILL IN HERE
   // Careful: .value gives you STRINGS, so "2" + "3" is "23", not 5.
   // Turn them into numbers first with Number(...).
+
+
+  let num1 = Number(first);
+  let num2 = Number(second)
+
+  output.textContent = num1 + num2;
 }
 
 // ---------------------------------------------------------------------------
