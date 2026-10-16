@@ -1,0 +1,62 @@
+.flexboxContainer
+{
+    display: flex;
+
+    width: 100vw;
+    height: 100vw;
+    box-sizing: border-box;
+    flex-direction: column;
+    
+}
+
+.flexBoxHero
+{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: ;
+}
+.body 
+{
+    margin: 0;
+    padding: 0;
+}
+
+.Hero 
+{
+    background-color: #1F2937;
+    
+}
+
+
+.Hero .Logo
+{
+    align-items: center;
+    font-size: 24px;
+    color: #F9FAF8;
+}
+
+.Hero .MainContent
+{
+    font-size: 48px;
+    color: #F9FAF8;
+    font-weight: 900;
+}
+
+.Hero .SecondaryContent
+{
+    font-size: 18px;
+    color: #E5E7EB;
+    
+}
+
+.Hero .Button
+{
+    color: #3882F6;
+
+}
+
+@font-face {
+    font-family: "ROBOTO_FAMILY";
+    src: url();
+}
