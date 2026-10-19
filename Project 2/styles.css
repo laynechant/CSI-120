@@ -6,7 +6,6 @@ html, body
 }
 
 a {
-
     color: #b3bece;
 }
 
@@ -21,19 +20,12 @@ a {
 {
     display: flex;
  
-    
     justify-content: space-around;
 
     padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 2px;
    
-}
-
-.body 
-{
-    margin: 0;
-    padding: 0;
 }
 
 .Hero 
@@ -88,14 +80,6 @@ a {
     border-radius: 8px;
 }
 
-.Hero .button
-{
-    background-color: #3882F6;
-    padding: 12px 24px;
-    font-size: 18px;
-    cursor: pointer;
-}
-
 .FeatureHeading
 {
     display: grid;
@@ -112,15 +96,18 @@ a {
     justify-content: space-between;
 }
 
-.Feature .FeatureImg
+.FeatureImg
+{
+    padding: 75px 0 0 75px;
+}
+
+.FeatureImg img
 {
     border-radius: 5px;
     border-color: #1F2937;
-    width: 50%;
-    height: 50%;
-   
-    padding-top: 75px;
-    padding-left: 75px;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
 }
 
 .Feature .FeatureQuote
@@ -170,11 +157,14 @@ a {
 
 }
 
-.CallToAction .Button
+button
 {
     background-color: #3882F6;
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 8px;
+  
     cursor: pointer;
 }
 
@@ -206,7 +196,7 @@ a {
         width: 100%;
         height: auto;
         padding-left: 0;
-        margin: 20px;
+        margin-top: 20px;
     }
 
     .Feature
@@ -227,7 +217,7 @@ a {
         font-size: 24px;
     }
 
-    .CallToAction
+    .CallToAction .Box
     {
         flex-direction: column;
         text-align: center;
