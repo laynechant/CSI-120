@@ -5,6 +5,9 @@ html, body
     width: 100%;
 }
 
+
+
+
 .flexboxContainer
 {
     display: flex;
@@ -17,10 +20,11 @@ html, body
 .flexBoxHero
 {
     display: flex;
-    width: max-content;
+ 
     
-    justify-content: flex-start;
-    padding-top: 20px;
+    justify-content: space-around;
+
+    padding-top: 10px;
     padding-bottom: 20px;
     padding-left: 2px;
    
@@ -34,6 +38,7 @@ html, body
 
 .Hero 
 {
+    
     background-color: #1F2937;
 }
 
@@ -49,7 +54,8 @@ html, body
 
 .Hero .HeaderLinks
 {
-    justify-self: flex-end;
+    
+    padding-left: 30px;
     
     font-size: 20px;
     color: #F9FAF8;
@@ -57,10 +63,14 @@ html, body
 
 .Hero .MainContent
 {
+    display: flex;
+    justify-content: space-between;
     padding-left: 75px;
+    padding-bottom: 25px;
     font-size: 24px;
     color: #F9FAF8;
     font-weight: 900;
+
 }
 
 .Hero .SecondaryContent
@@ -71,10 +81,20 @@ html, body
     
 }
 
+.MainContent .Image{
+    padding-left : 50px;
+    width:  75%;
+    height: 75%;
+    border-radius: 8px;
+}
+
 .Hero .Button
 {
+    width: 50%;
+    height: 50%;
     color: #3882F6;
     padding-left: 75px;
+    border-radius: 8px;
 }
 
 @font-face {
