@@ -5,14 +5,14 @@ html, body
     width: 100%;
 }
 
+a {
 
-
+    color: #b3bece;
+}
 
 .flexboxContainer
 {
     display: flex;
-
-  
     flex-direction: column;
     
 }
@@ -45,8 +45,6 @@ html, body
 
 .Hero .Logo
 {
-    
- 
     padding-left: 75px;
     font-size: 24px;
     color: #F9FAF8;
@@ -54,7 +52,6 @@ html, body
 
 .Hero .HeaderLinks
 {
-    
     padding-left: 30px;
     
     font-size: 20px;
@@ -75,10 +72,13 @@ html, body
 
 .Hero .SecondaryContent
 {
-    padding-left: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
     font-size: 18px;
     color: #E5E7EB;
-    
 }
 
 .MainContent .Image{
@@ -88,16 +88,151 @@ html, body
     border-radius: 8px;
 }
 
-.Hero .Button
+.Hero .button
 {
-    width: 50%;
-    height: 50%;
-    color: #3882F6;
-    padding-left: 75px;
-    border-radius: 8px;
+    background-color: #3882F6;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
 }
 
-@font-face {
-    font-family: "ROBOTO_FAMILY";
-    src: url();
+.FeatureHeading
+{
+    display: grid;
+    place-items: center;
+    font-size: 36px;
+    color: #1F2937;
+    font-weight: 900;
+
+}
+
+.Feature
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Feature .FeatureImg
+{
+    border-radius: 5px;
+    border-color: #1F2937;
+    width: 50%;
+    height: 50%;
+   
+    padding-top: 75px;
+    padding-left: 75px;
+}
+
+.Feature .FeatureQuote
+{
+    padding-top: 25px;
+}
+
+.Quote 
+{
+    padding: 100px;
+    background-color: #E5E7EB;
+    font-size: 36px;
+    font-weight: 300;
+    
+}
+
+.Quote .Author
+{
+    text-align: center ;
+    color: #1F2937;
+}
+
+.CallToAction
+{
+    display: flex;
+    justify-content: center;
+    padding: 80px;
+
+}
+
+.CallToAction .Box
+{
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+
+    padding: 40px 60px;
+    border-radius: 6px;
+    background-color: #3882F6;
+
+}
+
+.CallToAction .Text
+{
+    color:#E5E7EB;
+
+}
+
+.CallToAction .Button
+{
+    background-color: #3882F6;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.FooterContent
+{
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px)
+{
+
+    .flexBoxHero
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .Hero .MainContent
+    {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .MainContent .Image
+    {
+        width: 100%;
+        height: auto;
+        padding-left: 0;
+        margin: 20px;
+    }
+
+    .Feature
+    {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .FeatureImg img{
+        width: 280px;
+        height: 280px;
+        object-fit: contain;
+    }
+
+    .Quote
+    {
+        padding: 30px;
+        font-size: 24px;
+    }
+
+    .CallToAction
+    {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        width: 90%;
+        padding: 30px;
+    }
 }
