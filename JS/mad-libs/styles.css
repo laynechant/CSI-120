@@ -1,0 +1,44 @@
+/* Starting point only. Make this yours - the brief asks for something you
+   would be happy to hand to a friend. */
+
+body {
+    font-family: system-ui, sans-serif;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin-bottom: 4px;
+}
+
+.hint {
+    color: #666;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-top: 14px;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 18px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#story {
+    margin-top: 28px;
+    font-size: 18px;
+    line-height: 1.6;
+}
