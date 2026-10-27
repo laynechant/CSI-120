@@ -23,7 +23,7 @@ function generateStory() {
     const verb = document.getElementById("verb").value;
 
     const numberString = document.getElementById("number").value;
-    console.log(numberString);
+    
     const number = Number(numberString);
 
     const name = document.getElementById("name").value;
@@ -39,27 +39,32 @@ function generateStory() {
 
     if(!adjective)
     {
-        storyElement.textContent = "Your missing an adjective!";
+        storyElement.textContent = "You're missing an adjective!";
         return;
     }
     if(!noun)
     {
-        storyElement.textContent = "Your missing a noun!";
+        storyElement.textContent = "You're missing a noun!";
         return;
     }
     if(!verb)
     {
-        storyElement.textContent = "Your missing a verb!";
+        storyElement.textContent = "You're missing a verb!";
+        return;
+    }
+    if(!name)
+    {
+        storyElement.textContent = "You're missing a name!";
         return;
     }
     if(!numberString)
     {
-        storyElement.textContent = "Your missing an adjective!";
+        storyElement.textContent = "You're missing a number!";
         return;
     }
-    if(!number)
+    if(isNaN(number))
     {
-        console.log("The number didnt convert properly from a string");
+        storyElement.textContent = "The number didnt convert properly from a string";
         return;
     }
 
@@ -70,7 +75,7 @@ function generateStory() {
     //
     //    Write a longer, sillier one than that. Use all five words.
 
-    const story = `A ${adjective}, ${noun} wanted to change things up so they decidied to ${verb} ${number} times. After doing this, ${name} figured it was the best decision they ever made`;
+    const story = `A ${adjective} ${noun} wanted to change things up so they decided to ${verb} ${number} times. After doing this, ${name} figured it was the best decision they ever made. ${name} then made a quick stop at a store to pick up a scratch ticket to take advantage of their new luck.`;
 
     // 4. Put it on the page. Not console.log, not alert.
     //
