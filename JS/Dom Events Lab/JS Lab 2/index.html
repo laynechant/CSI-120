@@ -1,0 +1,84 @@
+<!--
+For this lab you will fill in the missing JavaScript throughout script.js,
+following the comments in each function.
+
+This lab is about two things:
+
+1. Grabbing an element off the page with document.getElementById().
+   You can then read or change that element.
+
+       const p = document.getElementById("my_paragraph");
+       p.textContent = "Read the news!";
+       p.style.color = "blue";
+
+   Use .textContent for plain text, and .innerHTML only when you actually
+   need to insert HTML.
+
+2. Reacting to a click with addEventListener().
+
+       button.addEventListener("click", handleClick);
+
+   Notice the buttons below have no onclick="..." attributes. Wiring up
+   behaviour in JavaScript instead of in the HTML keeps the two separate,
+   and lets you attach more than one handler to the same element.
+
+Reference:
+  https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById
+  https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+  https://www.theodinproject.com/lessons/foundations-dom-manipulation-and-events
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSI 120 — DOM Lab</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- defer waits until the page is parsed, so the elements exist by the time script.js runs -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- Swapper -->
+  <h3>Swapper</h3>
+  <p id="para1">Hello!</p>
+  <p id="para2">Goodbye!</p>
+  <button id="swapButton">Swap</button>
+  <hr>
+
+  <!-- Placing Emphasis -->
+  <h3>Placing Emphasis</h3>
+  <p>Fall just started but I am already over the <span id="placeForEmphasis">bitter</span> cold.</p>
+  <button id="emphasizeButton">Emphasize</button>
+  <hr>
+
+  <!-- Tiny Calculator -->
+  <h3>Tiny Calculator</h3>
+  <input type="number" id="operand1">
+  <select id="operation">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+  </select>
+  <input type="number" id="operand2">
+  =&nbsp;<span id="answer"></span>
+  <button id="calculateButton">Calculate</button>
+  <hr>
+
+  <!-- Powers of 2 Table -->
+  <h3>Powers Table</h3>
+  <div id="powersTable"></div>
+  <button id="powersButton">Generate Table</button>
+  <hr>
+
+  <!-- Magic Eight Ball -->
+  <h3>Magic Eight Ball</h3>
+  <img id="eightball"
+       src="https://cdn4.iconfinder.com/data/icons/sports-recreation/128/billiards-128.png"
+       alt="Eight Ball">
+  <p id="eightballAnswer"></p>
+  <hr>
+</body>
+
+</html>
