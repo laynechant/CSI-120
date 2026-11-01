@@ -65,7 +65,7 @@ function calculate() {
     answer = (operand1 + operand2);
     answerElement.textContent = answer;
   }
- if(operation == "/" && operand1 == 0 || operand2 == 0)
+  if(operation == "/" && operand1 == 0 || operand2 == 0)
   {
     
     answerElement.textContent = "Cant Devide by 0";
@@ -83,6 +83,14 @@ function generatePowersTable() {
   // the container. Use a loop — do not write ten rows by hand.
   // You can build it as an HTML string, or create elements with
   // document.createElement() and append them. Either is fine.
+  
+  for(let i = 1; i <=10; i++)
+  {
+    let powers = document.createElement("div");
+
+    powers.textContent = `${Math.pow(2, i)}`;
+    container.appendChild(powers);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -95,6 +103,18 @@ function askEightBall() {
   // When the eight ball is clicked, answer the question.
   // Keep an array of possible answers and pick one at random.
   // Hint: Math.floor(Math.random() * answers.length)
+
+  const answers = [];
+
+  answers.push("It is certain");
+  answers.push("Ask again later");
+  answers.push("Don’t count on it");
+  answers.push("Without a doubt");
+  answers.push("Cannot predict now");
+
+  randomNum = Math.floor(Math.random() * answers.length);
+  answerElement.textContent = `${answers[randomNum]}`;
+
 }
 
 // ---------------------------------------------------------------------------
