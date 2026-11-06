@@ -14,10 +14,10 @@ let coverUrls = [
 
 
 const books = [
-  { title: "To Kill a Mockingbird", author: "Harper Lee",          alreadyRead: true, coverUrl: coverUrls[0] },
-  { title: "1984",                  author: "George Orwell",       alreadyRead: false, coverUrl: coverUrls[1] },
-  { title: "The Great Gatsby",      author: "F. Scott Fitzgerald", alreadyRead: true, coverUrl: coverUrls[2]  },
-  { title: "Moby Dick",             author: "Herman Melville",     alreadyRead: false, coverUrl: coverUrls[3] }
+  { title: "To Kill a Mockingbird", author: "Harper Lee",          alreadyRead: true},
+  { title: "1984",                  author: "George Orwell",       alreadyRead: false},
+  { title: "The Great Gatsby",      author: "F. Scott Fitzgerald", alreadyRead: true},
+  { title: "Moby Dick",             author: "Herman Melville",     alreadyRead: false}
 ];
 
 let bookElement = document.getElementById("Book List");
@@ -26,20 +26,49 @@ let bookElement = document.getElementById("Book List");
 
 books.forEach((book) => {
     let bookIdentifier = document.createElement("li");
+  
     let img = CreateCoverImage(book);
 
     bookIdentifier.textContent = `${book.title} ${book.author}`
     bookElement.appendChild(bookIdentifier);
-    bookIdentifier.appendChild(img);
+    bookElement.appendChild(img);
+
+    StyleOnAlreadyRead(book, bookIdentifier, img);
 })
+
+function CreateImageProperty(book)
+{
+    for(let i = 0; i < books.length; i++)
+    {
+        Object.assign(books[i], {coverUrl: coverUrls[i]});
+    }
+}
 
 
 function CreateCoverImage(book)
 {
-    let coverImage = document.createElement("img")
+   
+
+    CreateImageProperty(book);
+    let coverImage = document.createElement("img");
     coverImage.src = book.coverUrl;
     coverImage.alt = `Cover Image for ${book.author}`;
     coverImage.width = 300; 
     coverImage.height = 300;
     return coverImage; 
+}
+
+function StyleOnAlreadyRead(book, bookAuthor, bookCover)
+{
+    
+    console.log(book.author + book.alreadyRead);
+    if (book.alreadyRead == true)
+    {
+        bookAuthor.className = "book";
+        bookCover.className = "book";
+    }
+    else 
+    {
+        console.log("This wasnt true");
+    }
 }

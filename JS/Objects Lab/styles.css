@@ -1,0 +1,12 @@
+img
+{
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.book
+{
+
+   opacity: 0.4;
+}
