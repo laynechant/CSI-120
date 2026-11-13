@@ -11,7 +11,16 @@
 // Careful: the prices are STRINGS. "34.99" + "7.99" is "34.997.99", not 42.98.
 
 function cashRegister(cart) {
-  // YOU FILL IN HERE
+  let price = 0.0;
+  let itemPrices = Object.values(cart);
+
+  itemPrices.forEach((item) =>{
+      
+      let numPrice = Number(item);
+      price += numPrice;
+  })
+
+  return price;
 }
 
 // ===========================================================================
