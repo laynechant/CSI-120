@@ -38,7 +38,29 @@ function cashRegister(cart) {
 
 function validateCreditCard(number) {
   // YOU FILL IN HERE
-}
+  let strNum = String(number);
+
+  if(strNum.length != 16)
+    return false;
+
+  for(let i = 0; i < strNum.length; i++)
+  {
+     if(isNaN(strNum[i])) return false;
+            
+  }
+
+    if(new Set(strNum).size < 2) return false;
+
+    if(strNum[strNum.length - 1] % 2 !== 0) return false;
+
+    const sum = [...strNum].reduce((a, d) => a + Number(d), 0);
+    
+    if(sum <= 16) return false;
+
+    return true;
+
+  }
+
 
 // ===========================================================================
 // Test cases — leave these in. They should all print true when you are done.
@@ -60,3 +82,19 @@ console.log(validateCreditCard("a92332119c011112") === false);  // non-numeric
 console.log(validateCreditCard("4444444444444444") === false);  // only one digit used
 console.log(validateCreditCard("1111111111111110") === false);  // sum too low
 console.log(validateCreditCard("6666666666666661") === false);  // odd final digit
+
+
+/* 
+  let char = strNum[i];
+    
+    count[char] = (count[char] || 0) + 1;
+
+    let repeat = Object.values(count).some(count => count > 1);
+    
+    if(repeat)
+      return false;
+    else
+    {
+      return true;
+    } 
+  */
