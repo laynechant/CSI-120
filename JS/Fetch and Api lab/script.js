@@ -3,6 +3,12 @@ async function getDogImage() {
     try{
         const req = new Request("https://dog.ceo/api/breeds/image/random");
         const res = await fetch(req);
+        
+        if(!res.ok)
+        {
+            throw new Error("fetch request failed");
+        }
+        
         const data = await res.json();
 
         const img = document.createElement ("img");
@@ -21,4 +27,4 @@ async function getDogImage() {
     }
 }
 
-getDogImage();
+document.getElementById("dogButton").addEventListener("click", getDogImage);
