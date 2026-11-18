@@ -3,7 +3,6 @@ function CreateATodoListCategory()
 {
     let listName = document.getElementById("todoListName").value;
     let listContainer = document.getElementById("todoListContainer");
-    //let listCategory = document.getElementById("todoListCategory");
 
     let newTodoCategory = document.createElement("ul");
     newTodoCategory.className = "todoCategory";
@@ -14,12 +13,6 @@ function CreateATodoListCategory()
     let newTodoInput = document.createElement("input");
     newTodoInput.className = "listTitle";
     newTodoInput.value = listName;
-
-   /*  let newTodoLabel = document.createElement("label");
-    newTodoLabel.id = "todoListLabel";
-    newTodoLabel.textContent = listName; 
-    listContainer.appendChild(newTodoLabel);
-    */
 
     let createTodoButton = document.createElement("button");
     createTodoButton.className = "createTodo";
@@ -89,8 +82,9 @@ function CreateSearchBar()
 
     searchBar.addEventListener("input", () =>
     {
+        const todoNames = document.getElementsByClassName("todoName");
         // pass in what the user wrote
-        SearchTodos(searchBar.value);
+        SearchTodos(searchBar.value, todoNames);
     })
 
     todoContainer.appendChild(label);
@@ -102,16 +96,17 @@ CreateSearchBar();
 // Hide all the todos when searching
 // if we find one display it if it doesnt find anything display all todos
 // and tell the user we didnt find anything
-function SearchTodos(name)
-{
-    const todoNames = document.getElementsByClassName("todoName");
+function SearchTodos(searchedName, todoList)
+{ 
+    const lowerCaseName = searchedName.toLowerCase();
+    for(const element of todoList)
+    {
+        const container = element.parentElement;
 
-    todoNames.array.forEach(todoName => {
-        if(todoName.includes(name))
-        {
-
-        }
-    });
+        const name = element.value.toLowerCase();
+        
+        container.hidden = !name.includes(lowerCaseName);
+    }
 }
 
 
