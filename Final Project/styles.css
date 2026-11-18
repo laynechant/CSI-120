@@ -11,3 +11,9 @@ input
     margin: 10px;
     border-radius: 8px;
 }
+
+ul
+{
+
+    list-style-type: none;
+}

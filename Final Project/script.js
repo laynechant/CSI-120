@@ -5,18 +5,13 @@ function CreateATodoListCategory()
     let listContainer = document.getElementById("todoListContainer");
     //let listCategory = document.getElementById("todoListCategory");
 
-    // this should create a unordered list of todos with the specified 
-    // name
-
     let newTodoCategory = document.createElement("ul");
-    newTodoCategory.id = "todoListCategory";
+    //newTodoCategory.id = "todoListCategory";
+    newTodoCategory.id = listName;
 
     let newTodoList = document.createElement("li");
     newTodoList.id = "todoList";
 
-
-    // Todo - How can i make it so the list name is saved to this input value
-    // Todo - Maybe I should make a new label to so it shows the specified category
     let newTodoInput = document.createElement("input");
     newTodoInput.id = "input";
     newTodoInput.value = listName;
@@ -31,6 +26,12 @@ function CreateATodoListCategory()
     createTodoButton.id = "createTodo";
     createTodoButton.textContent = "Create a Todo for this List";
 
+    // the argument is the pointer event which isnt what i want
+    // Todo: figure out how to pass in the listCategory
+    createTodoButton.addEventListener("click", (e) => {
+        console.log(listName);
+        CreateATodo(newTodoList);
+    })
 
 
     newTodoList.appendChild(newTodoInput);
@@ -40,14 +41,53 @@ function CreateATodoListCategory()
     newTodoList.append(createTodoButton);
 }
 
-function CreateATodo()
+function CreateATodo(ListName)
 {
-    let Todo = document.createElement("input");
-    Todo.type = "checkbox";
-    Todo.id = "todo";
-    
+    let TodoOrganizer = document.createElement("li");
+    let TodoCheckbox = document.createElement("input");
+    TodoCheckbox.type = "checkbox";
+    TodoCheckbox.id = "todoCheckBox";
+    // use this in css so i can style when a thing is done and cross it out
+    TodoCheckbox.value = "done";
+
+    // Todo: i need some way to get the specifc todo list to append the task to 
+
+    let TodoName = document.createElement("input");
+    TodoName.id = "todoName";
+
+    TodoOrganizer.appendChild(TodoCheckbox);
+    TodoOrganizer.appendChild(TodoName);
+
+    CreateDeleteButton(TodoOrganizer);
+
+    ListName.appendChild(TodoOrganizer);
+}
+
+function CreateDeleteButton(TodoObject)
+{
+    let DeleteButton = document.createElement("button");
+    DeleteButton.textContent = "X";
+
+
+
+    TodoObject.appendChild(DeleteButton);
+
+   
+    DeleteButton.addEventListener("click", (h) =>
+    {
+        DeleteATodo(TodoObject);
+    })
+
+
+    return DeleteButton;
 
 }
 
+function DeleteATodo(ElementToRemove)
+{
+    ElementToRemove.remove();
+}
+
+// Todo: clear the input field when the change event fires - maybe just clear it in the called func
 
 document.getElementById("todoListName").addEventListener("change", CreateATodoListCategory);
