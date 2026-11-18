@@ -6,14 +6,13 @@ function CreateATodoListCategory()
     //let listCategory = document.getElementById("todoListCategory");
 
     let newTodoCategory = document.createElement("ul");
-    //newTodoCategory.id = "todoListCategory";
-    newTodoCategory.id = listName;
+    newTodoCategory.className = "todoCategory";
 
     let newTodoList = document.createElement("li");
-    newTodoList.id = "todoList";
+    newTodoList.className = "todoList";
 
     let newTodoInput = document.createElement("input");
-    newTodoInput.id = "input";
+    newTodoInput.className = "listTitle";
     newTodoInput.value = listName;
 
    /*  let newTodoLabel = document.createElement("label");
@@ -23,13 +22,11 @@ function CreateATodoListCategory()
     */
 
     let createTodoButton = document.createElement("button");
-    createTodoButton.id = "createTodo";
+    createTodoButton.className = "createTodo";
     createTodoButton.textContent = "Create a Todo for this List";
 
-    // the argument is the pointer event which isnt what i want
-    // Todo: figure out how to pass in the listCategory
-    createTodoButton.addEventListener("click", (e) => {
-        console.log(listName);
+
+    createTodoButton.addEventListener("click", () => {
         CreateATodo(newTodoList);
     })
 
@@ -43,50 +40,80 @@ function CreateATodoListCategory()
 
 function CreateATodo(ListName)
 {
-    let TodoOrganizer = document.createElement("li");
+    let todo = document.createElement("li");
+    todo.className = "todo";
     let TodoCheckbox = document.createElement("input");
     TodoCheckbox.type = "checkbox";
-    TodoCheckbox.id = "todoCheckBox";
+    TodoCheckbox.className = "todoCheckBox";
     // use this in css so i can style when a thing is done and cross it out
     TodoCheckbox.value = "done";
 
-    // Todo: i need some way to get the specifc todo list to append the task to 
-
     let TodoName = document.createElement("input");
-    TodoName.id = "todoName";
+    TodoName.className = "todoName";
 
-    TodoOrganizer.appendChild(TodoCheckbox);
-    TodoOrganizer.appendChild(TodoName);
+    todo.appendChild(TodoCheckbox);
+    todo.appendChild(TodoName);
 
-    CreateDeleteButton(TodoOrganizer);
+    CreateDeleteButton(todo);
 
-    ListName.appendChild(TodoOrganizer);
+    ListName.appendChild(todo);
 }
+
 
 function CreateDeleteButton(TodoObject)
 {
     let DeleteButton = document.createElement("button");
     DeleteButton.textContent = "X";
-
-
+    DeleteButton.className = "deleteTodo";
 
     TodoObject.appendChild(DeleteButton);
 
-   
-    DeleteButton.addEventListener("click", (h) =>
+    DeleteButton.addEventListener("click", () =>
     {
-        DeleteATodo(TodoObject);
+        TodoObject.remove();
     })
 
-
-    return DeleteButton;
-
 }
 
-function DeleteATodo(ElementToRemove)
+
+function CreateSearchBar()
 {
-    ElementToRemove.remove();
+    const todoContainer = document.getElementById("todoListContainer");
+    const label = document.createElement("label");
+    label.textContent = "Search for Specfic Todo's";
+    const searchBar = document.createElement("input");
+    searchBar.type = "search";
+    searchBar.className = "searchBar";
+
+    searchBar.placeholder = "Search Todo's...";
+
+    searchBar.addEventListener("input", () =>
+    {
+        // pass in what the user wrote
+        SearchTodos(searchBar.value);
+    })
+
+    todoContainer.appendChild(label);
+    todoContainer.appendChild(searchBar);
 }
+
+CreateSearchBar();
+
+// Hide all the todos when searching
+// if we find one display it if it doesnt find anything display all todos
+// and tell the user we didnt find anything
+function SearchTodos(name)
+{
+    const todoNames = document.getElementsByClassName("todoName");
+
+    todoNames.array.forEach(todoName => {
+        if(todoName.includes(name))
+        {
+
+        }
+    });
+}
+
 
 // Todo: clear the input field when the change event fires - maybe just clear it in the called func
 
